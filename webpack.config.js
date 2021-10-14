@@ -32,15 +32,29 @@ module.exports = {
               postcssOptions: {
                 plugins: [
                   "postcss-import",
-                  "autoprefixer",
+                  "precss",
                   "cssnext",
-                  "cssnano"
+                  "cssnano",
+                  "autoprefixer"
                 ],
               },
             }
           }
         ]
-      }
+      },
+
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              publicPath: 'assets',
+            },
+          }
+        ],
+      },
     ]
   },
   plugins: [new HtmlWebpackPlugin({template: './src/index.html'}), new MiniCssExtractPlugin()],

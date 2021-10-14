@@ -1,9 +1,11 @@
 import React from "react"
+import AppHeader from "./Components/AppHeader";
 
 function App() {
-  return (<div>
-    <h2>Welcome to React App</h2>
-    <h3>Date : {new Date().toDateString()}</h3>
+  return (<div className='PrimaryContainer'>
+    <AppHeader />
+
+
   </div>)
 }
 
